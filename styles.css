@@ -11,6 +11,14 @@
     --radius: 22px;
     --container: 1200px;
     --header-height: 88px;
+    --bg-page: #eceae6;
+    --bg-card: #f7f7f5;
+    --text-main: #232323;
+    --text-muted: #5b5f61;
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+    --radius-xl: 34px;
+    --radius-lg: 26px;
+    --container-width: 1180px;
 }
 
 *, *::before, *::after {
@@ -22,6 +30,8 @@ html {
 }
 
 body {
+    width: 100%;
+    overflow-x: hidden;
     margin: 0;
     font-family: "Inter", sans-serif;
     background: var(--bg);
@@ -811,44 +821,15 @@ p {
     }
 }
 
-:root {
-    --bg-page: #eceae6;
-    --bg-card: #f7f7f5;
-    --text-main: #232323;
-    --text-muted: #5b5f61;
-    --accent: #0f6a73;
-    --accent-dark: #0b4f55;
-    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
-    --radius-xl: 34px;
-    --radius-lg: 26px;
-    --container-width: 1180px;
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Inter", "Segoe UI", sans-serif;
-    background: var(--bg-page);
-    color: var(--text-main);
-}
-
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.project-page {
+.project-tab-page {
     padding: 48px 20px 72px;
 }
 
 
 
 
-.project-card {
+.project-tab-card {
     display: grid;
     grid-template-columns: minmax(320px, 520px) 1fr;
     align-items: stretch;
@@ -859,26 +840,26 @@ img {
     box-shadow: var(--shadow-soft);
 }
 
-.project-card__image {
+.project-tab-card__image {
     min-height: 100%;
     background: #ddd;
 }
 
-.project-card__image img {
+.project-tab-card__image img {
     width: 100%;
     height: 100%;
     min-height: 560px;
     object-fit: cover;
 }
 
-.project-card__content {
+.project-tab-card__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 56px 52px;
 }
 
-.project-card__label {
+.project-tab-card__label {
     display: inline-block;
     margin-bottom: 16px;
     font-size: 13px;
@@ -888,7 +869,7 @@ img {
     color: var(--accent);
 }
 
-.project-card__title {
+.project-tab-card__title {
     margin: 0 0 22px;
     font-size: clamp(34px, 4vw, 56px);
     line-height: 1.05;
@@ -896,7 +877,7 @@ img {
     color: var(--text-main);
 }
 
-.project-card__text {
+.project-tab-card__text {
     margin: 0 0 30px;
     max-width: 560px;
     font-size: 22px;
@@ -904,14 +885,14 @@ img {
     color: var(--text-muted);
 }
 
-.project-card__meta {
+.project-tab-card__meta {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 34px;
 }
 
-.project-meta-item {
+.project-tab-meta-item {
     min-width: 132px;
     padding: 16px 18px;
     background: #ffffff;
@@ -919,7 +900,7 @@ img {
     border: 1px solid rgba(15, 106, 115, 0.08);
 }
 
-.project-meta-item__value {
+.project-tab-meta-item__value {
     display: block;
     margin-bottom: 6px;
     font-size: 18px;
@@ -927,14 +908,14 @@ img {
     color: var(--accent-dark);
 }
 
-.project-meta-item__label {
+.project-tab-meta-item__label {
     display: block;
     font-size: 13px;
     line-height: 1.3;
     color: var(--text-muted);
 }
 
-/*.project-card__button {*/
+/*.project-tab-card__button {*/
 /*    display: inline-flex;*/
 /*    align-items: center;*/
 /*    justify-content: center;*/
@@ -950,93 +931,93 @@ img {
 /*    transition: transform 0.25s ease, background 0.25s ease;*/
 /*}*/
 
-.project-card__button:hover {
+.project-tab-card__button:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
 }
 
 /* планшет */
 @media (max-width: 991px) {
-    .project-card {
+    .project-tab-card {
         grid-template-columns: 1fr;
     }
 
-    .project-card__image img {
+    .project-tab-card__image img {
         min-height: 420px;
     }
 
-    .project-card__content {
+    .project-tab-card__content {
         padding: 36px 30px 38px;
     }
 
-    .project-card__text {
+    .project-tab-card__text {
         font-size: 19px;
     }
 }
 
 /* телефон — як на макеті */
 @media (max-width: 640px) {
-    .project-page {
+    .project-tab-page {
         padding: 22px 16px 40px;
     }
 
-    .project-card {
+    .project-tab-card {
         border-radius: 28px;
     }
 
-    .project-card__image {
+    .project-tab-card__image {
         padding: 0;
     }
 
-    .project-card__image img {
+    .project-tab-card__image img {
         min-height: 0;
         aspect-ratio: 1 / 0.95;
         object-fit: cover;
     }
 
-    .project-card__content {
+    .project-tab-card__content {
         padding: 22px 22px 26px;
     }
 
-    .project-card__label {
+    .project-tab-card__label {
         margin-bottom: 10px;
         font-size: 11px;
     }
 
-    .project-card__title {
+    .project-tab-card__title {
         margin-bottom: 16px;
         font-size: 22px;
         line-height: 1.15;
     }
 
-    .project-card2__text {
+    .project-tab-card2__text {
         margin-bottom: 20px;
         font-size: 15px;
         line-height: 1.55;
         max-width: 100%;
     }
 
-    .project-card__meta {
+    .project-tab-card__meta {
         gap: 10px;
         margin-bottom: 22px;
     }
 
-    .project-meta-item {
+    .project-tab-meta-item {
         flex: 1 1 calc(50% - 10px);
         min-width: 120px;
         padding: 12px 14px;
         border-radius: 14px;
     }
 
-    .project-meta-item__value {
+    .project-tab-meta-item__value {
         font-size: 15px;
     }
 
-    .project-meta-item__label {
+    .project-tab-meta-item__label {
         font-size: 12px;
     }
 
-    .project-card__button {
+    .project-tab-card__button {
         width: 100%;
         min-width: 0;
         padding: 14px 20px;
