@@ -13,7 +13,7 @@
     --header-height: 88px;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -845,11 +845,8 @@ img {
     padding: 48px 20px 72px;
 }
 
-.container {
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-}
+
+
 
 .project-card {
     display: grid;
